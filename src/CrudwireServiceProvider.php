@@ -22,7 +22,7 @@ class CrudwireServiceProvider extends ServiceProvider
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'janmoo');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'crudwire');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/routes.php');
 
         Livewire::component('crudwire::counter', Counter::class);
         Livewire::component('crudwire::crud', Crud::class);

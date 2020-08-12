@@ -2,15 +2,15 @@
     @if ($edit=== true)
         <td><p>{{ $user->id }}</p></td>
         <td>
-            <input form="edituser"type="text" name="" id="" value="{{ $name }}"        wire:model="name">
+            <input form="edituser"type="text" name="" value="{{ $name }}" wire:model="name">
             @error('name') <span class="error">{{ $message }}</span> @enderror
         </td>
         <td>
-            <input form="edituser"type="text" name="" id="" value="{{ $email }}"       wire:model="email">
+            <input form="edituser"type="text" name="" value="{{ $email }}" wire:model="email">
             @error('email') <span class="error">{{ $message }}</span> @enderror
         </td>
         <td>
-            <input form="edituser"type="text" name="" id="" value="{{ $email_verified_at}}"  wire:model="email_verified_at">
+            <input form="edituser"type="text" name="" value="{{ $email_verified_at}}" wire:model="email_verified_at">
             @error('email_verified_at') <span class="error">{{ $message }}</span> @enderror
         </td>
         <td>
