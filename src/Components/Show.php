@@ -7,20 +7,17 @@ use Livewire\Component;
 
 class show extends Component
 {
-    public $user, $edit, $name, $email, $email_verified_at, $hidden;
+    public $hidden, $userid, $user;
 
     public function mount(User $user)
     {
         $this->user               = $user;
-
-        $this->name               = $user->name;
-        $this->email              = $user->email;
-        $this->email_verified_at  = $user->email_verified_at;
+        $this->userid             = $user->id;
     }
 
     public function edit()
     {
-        $this->edit= true;
+      return redirect()->route('crudwireshow', ['id' => $this->userid]);
     }
 
     public function cancel()
@@ -29,15 +26,7 @@ class show extends Component
         $this->mount($this->user);
     }
 
-    public function updated($field)
-    {
-        $this->validateOnly($field, [
-            'name'              => 'min:2',
-            'email'             => 'email',
-            'email_verified_at' => 'date-format:Y-m-d G:i:s',
 
-        ]);
-    }
 
     public function submit(){
 

@@ -1,8 +1,8 @@
 
 <div class="table-responsive">
+
     <table class="table table-hover">
         <thead>
-            @livewire('crudwire::create')
             <tr>
                 <th colspan="1">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search by email or username" aria-label="Search" wire:model="search">
@@ -24,7 +24,7 @@
                     </select>
                 </th>
                 <th colspan="1">
-                    <button wire:click="dump">dump</button>
+                    <button wire:click="create">create new user</button>
                 </th>
                 <th colspan="2">
                     <label for="results-per-page">results per page:</label>
@@ -58,4 +58,6 @@
         {{$users->links()}}
     </div>
 </div>
+
+
 

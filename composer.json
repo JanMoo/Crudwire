@@ -24,7 +24,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Janmoo\\Crudwire\\": "src/"
+            "Janmoo\\Crudwire\\": "src/",
+            "Janmoo\\Crudwire\\Components": "src/components/"
         }
     },
     "autoload-dev": {
