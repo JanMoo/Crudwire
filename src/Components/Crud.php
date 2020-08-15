@@ -18,11 +18,7 @@ class Crud extends Component
         $this->createnewuser    = false;
 
     }
-    public function create()
-    {
-        redirect('crudwire/create');
 
-    }
 
     public function updatingSearch()
     {

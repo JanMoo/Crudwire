@@ -28,7 +28,7 @@ class CrudwireServiceProvider extends ServiceProvider
         Livewire::component('crudwire::crud', Crud::class);
         Livewire::component('crudwire::edit', Edit::class);
         Livewire::component('crudwire::show', Show::class);
-        Livewire::component('crudwire::create', Create::class);
+
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
