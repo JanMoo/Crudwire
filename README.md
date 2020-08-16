@@ -18,6 +18,13 @@ https://laravel.com/docs/7.x/authentication
 npm install turbolinks
 ```
 
+add Turbolinks to your app.js below bootstrap.js
+```css
+require('./bootstrap');
+var Turbolinks = require("turbolinks")
+Turbolinks.start()
+```
+
 
 
 
