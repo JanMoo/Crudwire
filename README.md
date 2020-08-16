@@ -14,15 +14,27 @@ https://laravel.com/docs/7.x/authentication
 
 # quickstart
 ## install turbolinks
+
+install turbolinks on your laravel app
 ```
 npm install turbolinks
 ```
 
 add Turbolinks to your app.js below bootstrap.js
-```css
+```javascript
 require('./bootstrap');
 var Turbolinks = require("turbolinks")
 Turbolinks.start()
+```
+
+add data-turbolinks-track attribute to your script/css tags
+make sure that this happens on every page (layouts.app)
+```html
+<head>
+  <script defer src="{{ mix('js/app.js') }}" data-turbolinks-track="true" ></script>
+  
+  <link href="{{mix('css/app.css')}}" rel="stylesheet" data-turbolinks-track="true">
+</head>
 ```
 
 
