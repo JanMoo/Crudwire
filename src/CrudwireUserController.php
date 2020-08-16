@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use Auth\VerificationController;
+
 
 
 class CrudwireUserController extends Controller
@@ -25,7 +25,7 @@ class CrudwireUserController extends Controller
             'password'  => Hash::make($validatedData['password'],)
         ]);
 
-        $user->sendEmailVerificationNotification();
+        //$user->sendEmailVerificationNotification();
 
         session()->flash('crudwire', 'new user created succesfully');
         return view('crudwire::crudwire');
@@ -66,6 +66,8 @@ class CrudwireUserController extends Controller
                 $user->save;
         }
 
+        session()->flash('crudwire', 'user info edited succesfully');
+        return view('crudwire::crudwire');
 
 
     }
