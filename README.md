@@ -13,6 +13,7 @@ documantation laravel authentication:
 https://laravel.com/docs/7.x/authentication
 
 # quickstart
+note this a quickstart guide for more info visit links above
 ## install turbolinks
 
 install turbolinks on your laravel app
@@ -36,6 +37,7 @@ make sure that this happens on every page (layouts.app)
   <link href="{{mix('css/app.css')}}" rel="stylesheet" data-turbolinks-track="true">
 </head>
 ```
+make sure that your app.js is loaded on every page
 
 
 
