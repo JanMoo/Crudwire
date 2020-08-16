@@ -14,9 +14,9 @@ https://laravel.com/docs/7.x/authentication
 
 # quickstart
 ## install turbolinks
-'''
+```
 npm install turbolinks
-'''
+```
 
 
 
