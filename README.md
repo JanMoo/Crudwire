@@ -2,7 +2,7 @@
 This package provides a user crud for standard laravel authentication
 Cooked up with laravel/livewire and a dash of turbolinks.js
 
-packagist link:https://packagist.org/packages/janmoo/crudwire
+packagist link: https://packagist.org/packages/janmoo/crudwire
 
 # requirements
 this package requires you to install turbolinks.js 
@@ -56,7 +56,7 @@ migrate database
 
 //nota authenticate verify true???
 
-#install crudwire
+# install crudwire
 ```
 composer require janmoo/crudwire
 ```
