@@ -27,41 +27,6 @@ class show extends Component
     }
 
 
-
-    public function submit(){
-
-        $this->validate([
-            'name'                => 'required|min:6',
-            'email'               => 'required|email',
-            'email_verified_at'   => 'nullable|date-format:Y-m-d G:i:s',
-        ]);
-
-
-
-        if($this->email_verified_at){
-            $record = DB::table('users')
-                    ->where('id', $this->user->id)
-                    ->update([
-                        'name'                  => $this->name,
-                        'email'                 => $this->email,
-                        'email_verified_at'     => $this->email_verified_at
-                    ]);
-        }else{
-            $record = DB::table('users')
-                    ->where('id', $this->user->id)
-                    ->update([
-                        'name'      => $this->name,
-                        'email'     => $this->email
-                    ]);
-        }
-
-        $this->user->name                        = $this->name;
-        $this->user->email                       = $this->email;
-        $this->user->email_verified_at           = $this->email_verified_at;
-
-        $this->cancel();
-    }
-
     public function destroy(){
         User::destroy($this->user->id);
 

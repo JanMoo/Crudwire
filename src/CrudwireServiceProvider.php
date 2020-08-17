@@ -24,9 +24,8 @@ class CrudwireServiceProvider extends ServiceProvider
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../routes/routes.php');
 
-        Livewire::component('crudwire::counter', Counter::class);
+
         Livewire::component('crudwire::crud', Crud::class);
-        Livewire::component('crudwire::edit', Edit::class);
         Livewire::component('crudwire::show', Show::class);
 
 
