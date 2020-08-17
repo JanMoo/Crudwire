@@ -45,7 +45,7 @@ class CrudwireServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/crudwire.php', 'crudwire');
 
-        $this->app->make('Janmoo\Crudwire\CrudwireUsercontroller');
+        //$this->app->make('Janmoo\Crudwire\CrudwireUsercontroller');
         // Register the service the package provides.
         $this->app->singleton('crudwire', function ($app) {
             return new Crudwire;
