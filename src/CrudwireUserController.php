@@ -67,7 +67,7 @@ class CrudwireUserController extends Controller
         }
 
         session()->flash('crudwire', 'user info edited succesfully');
-        return view('crudwire::crudwire');
+        return route('crudwire::crudwire');
 
 
     }

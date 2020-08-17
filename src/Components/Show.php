@@ -15,11 +15,6 @@ class show extends Component
         $this->userid             = $user->id;
     }
 
-    public function edit()
-    {
-      return redirect()->route('crudwireshow', ['id' => $this->userid]);
-    }
-
     public function cancel()
     {
         $this->edit= false;

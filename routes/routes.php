@@ -3,8 +3,25 @@
 use Illuminate\Support\Facades\Route;
 use Janmoo\Crudwire\CrudwireUserController;
 
+$prefix = config('crudwire.crudwire_prefix');
 
-Route::get('crudwire', function () {
+dd($prefix);
+
+Route::prefix($prefix)->middleware('web')->group(function () {
+    Route::get('/', function () {
+        return view('crudwire::crudwire');
+    })->name('crudwire');
+
+    Route::get('user', function () {
+        return view('crudwire::create');
+    })->name('newuser');
+
+    Route::post('user', [CrudwireUserController::class, 'create'])->name('createuser');
+    Route::get('user/{id}', [CrudwireUserController::class, 'show'])->name('edituser');
+    Route::post('user/{id}', [CrudwireUserController::class, 'update'])->name('updateuser');
+
+});
+/*Route::get('crudwire', function () {
     return view('crudwire::crudwire');
 })->middleware('web')->name('crudwire');
 
@@ -13,7 +30,7 @@ Route::get('crudwire/user', function () {
 })->middleware('web')->name('newuser');
 
 Route::post('crudwire/user', [CrudwireUserController::class, 'create'])->middleware('web')->name('createuser');
-Route::get('crudwire/user/{id}', [CrudwireUserController::class, 'edit'])->middleware('web')->name('edituser');
+Route::get('crudwire/user/{id}', [CrudwireUserController::class, 'show'])->middleware('web')->name('edituser');
 Route::post('crudwire/user/{id}', [CrudwireUserController::class, 'update'])->middleware('web')->name('updateuser');
 
 
@@ -26,4 +43,5 @@ Route::post('crudwire/user/{id}', [CrudwireUserController::class, 'update'])->mi
 //    return view('crudwire::crudwire');
 //});
 
-//route::livewire('livewire', 'crudwire::crud');
+//route::livewire('livewire', 'crudwire::crud'); */
+

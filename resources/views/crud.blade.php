@@ -30,7 +30,7 @@
                                     </select>
                                 </th>
                                 <th colspan="1">
-                                    <a href="crudwire/user" class="btn btn-primary">create new user</a>
+                                    <a href="{{route('newuser')}}" class="btn btn-primary">create new user</a>
                                 </th>
                                 <th colspan="2">
                                     <label for="results-per-page">results per page:</label>

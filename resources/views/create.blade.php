@@ -68,7 +68,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     save changes
                                 </button>
-                                <a href="/"class="btn btn-danger">
+                                <a href="{{ route('crudwire')}}"class="btn btn-danger">
                                     cancel
                                 </a>
                             </div>
