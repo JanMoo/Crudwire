@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Janmoo\Crudwire\CrudwireUserController;
 
 
 Route::get('crudwire', function () {
@@ -12,9 +12,9 @@ Route::get('crudwire/user', function () {
     return view('crudwire::create');
 })->middleware('web')->name('newuser');
 
-Route::post('crudwire/user', 'Janmoo\Crudwire\CrudwireUserController@create')->middleware('web')->name('createuser');
-Route::get('crudwire/user/{id}', 'Janmoo\Crudwire\CrudwireUserController@show')->middleware('web')->name('edituser');
-Route::post('crudwire/user/{id}', 'Janmoo\Crudwire\CrudwireUserController@update')->middleware('web')->name('updateuser');
+Route::post('crudwire/user', [CrudwireUserController::class, 'create'])->middleware('web')->name('createuser');
+Route::get('crudwire/user/{id}', [CrudwireUserController::class, 'edit'])->middleware('web')->name('edituser');
+Route::post('crudwire/user/{id}', [CrudwireUserController::class, 'update'])->middleware('web')->name('updateuser');
 
 
 //build routes for updating and creating users
