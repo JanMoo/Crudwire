@@ -5,7 +5,7 @@ use Janmoo\Crudwire\CrudwireUserController;
 
 $prefix = config('crudwire.crudwire_prefix');
 
-dd($prefix);
+
 
 Route::prefix($prefix)->middleware('web')->group(function () {
     Route::get('/', function () {
