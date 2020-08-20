@@ -1,4 +1,4 @@
-@extends('crudwire::layouts.base')
+@extends(config('crudwire.crudwire_layout'))
 
 @section('content')
 
