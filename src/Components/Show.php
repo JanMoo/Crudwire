@@ -12,7 +12,6 @@ class show extends Component
     public function mount(User $user)
     {
         $this->user               = $user;
-        $this->userid             = $user->id;
     }
 
     public function cancel()
@@ -20,7 +19,6 @@ class show extends Component
         $this->edit= false;
         $this->mount($this->user);
     }
-
 
     public function destroy(){
         User::destroy($this->user->id);
