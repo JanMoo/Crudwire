@@ -1,7 +1,6 @@
 # crudwire
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/janmoo/crudwire.svg?style=flat-square)](https://packagist.org/packages/spatie/janmoo/crudwire)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Quality Score](https://img.shields.io/scrutinizer/g/janmoo/crudwire.svg?style=flat-square)](https://scrutinizer-ci.com/g/janmoo/crudwire)
 [![Total Downloads](https://img.shields.io/packagist/dt/janmoo/crudwire.svg?style=flat-square)](https://packagist.org/packages/janmoo/crudwire)
 
 This package provides a user crud for standard laravel authentication
