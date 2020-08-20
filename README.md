@@ -1,5 +1,5 @@
 # crudwire
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/janmoo/crudwire.svg?style=flat-square)](https://packagist.org/packages/spatie/janmoo/crudwire)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/janmoo/crudwire.svg?style=flat-square)](https://packagist.org/packages/janmoo/crudwire)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/janmoo/crudwire.svg?style=flat-square)](https://packagist.org/packages/janmoo/crudwire)
 
