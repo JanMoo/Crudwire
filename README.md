@@ -1,7 +1,5 @@
 # crudwire
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/janmoo/crudwire.svg?style=flat-square)](https://packagist.org/packages/janmoo/crudwire)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/janmoo/crudwire.svg?style=flat-square)](https://packagist.org/packages/janmoo/crudwire)
+[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/v)](//packagist.org/packages/phpunit/phpunit) [![Total Downloads](https://poser.pugx.org/phpunit/phpunit/downloads)](//packagist.org/packages/phpunit/phpunit) [![Latest Unstable Version](https://poser.pugx.org/phpunit/phpunit/v/unstable)](//packagist.org/packages/phpunit/phpunit) [![License](https://poser.pugx.org/phpunit/phpunit/license)](//packagist.org/packages/phpunit/phpunit)
 
 This package provides a user crud for standard laravel authentication
 Cooked up with laravel/livewire and a dash of turbolinks.js
