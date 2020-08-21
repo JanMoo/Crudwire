@@ -63,9 +63,11 @@ migrate database
 ```
 composer require janmoo/crudwire
 ```
-## Diggin Deeper
+now you can run php artisan serve, and visit localhost/crudwire
 
-# configuration options
+# Diggin Deeper
+
+## configuration options
 
 Standard crudwire is configured to be served on the route yourwebsite.example/crudwire. This prefix can be changed by publishing the config.
 ```
