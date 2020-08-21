@@ -47,16 +47,20 @@
                         </thead>
                         <thead>
                             <tr>
-                                <th scope="col">user id</th>
-                                <th scope="col">name</th>
-                                <th scope="col">email</th>
-                                <th scope="col">email verified at</th>
+                                @foreach ($columns as $columnName )
+                                    <th>
+                                        @if(strpos($columnName, '_'))
+                                            {{str_replace('_',' ',$columnName )}}
+                                        @else
+                                            {{$columnName }}
+                                        @endif </th>
+                                @endforeach
                                 <th colspan="2">actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                                @livewire('crudwire::show', ['user' => $user], key($user->id))
+                                @livewire('crudwire::show', ['user' => $user, 'columns' => $columns ], key($user->id))
                             @endforeach
                         </tbody>
                     </table>
