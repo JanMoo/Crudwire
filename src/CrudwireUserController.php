@@ -8,68 +8,105 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 
-
 class CrudwireUserController extends Controller
 {
+    public $fillables;
+
+    public function __construct()
+    {
+        $user = User::first();
+        $this->fillables = $user->getFillable();
+    }
+
+    public function validateUsers(Request $request, $update)
+    {
+        $validatedData = array();
+
+        foreach ($this->fillables as $key => $fillable) {
+            switch ($fillable) {
+                case 'name':
+                     $request->validate([
+                        'name' => 'required|string|max:255',]);
+                    $validatedData[$fillable] = $request[$fillable];
+                    break;
+
+                case 'email':
+                    if($update)
+                    {
+                         $request->validate([
+                            'email' => 'required|string|email|max:255',]);
+                        $validatedData[$fillable] = $request[$fillable];
+                        break;
+                    }
+                    $request->validate([
+                        'email' => 'required|string|email|max:255|unique:users',]);
+                    $validatedData[$fillable] = $request[$fillable];
+                    break;
+
+                case 'password':
+                    if($update){
+                        if(!$request['password']){
+                        break;
+                        }
+                        $request->validate([
+                            'password' => 'string|min:8|cobfirmed',]);
+                        $validatedData[$fillable] = $request[$fillable];
+                        break;
+                    }
+                    $request->validate([
+                        'password' => 'required|string|min:8|confirmed',]);
+                    $validatedData[$fillable] = $request[$fillable];
+                    break;
+
+                default:
+                    if($update)
+                    {
+                        if(!$request[$fillable]){
+                        break;
+                        }
+                    }
+                    $request->validate([$fillable => 'required',]);
+                    $validatedData[$fillable] = $request[$fillable];
+                    break;
+            }
+        }
+
+        return $validatedData;
+    }
+
+    public function index()
+    {
+        return view('crudwire::create', ['fillables' => $this->fillables]);
+    }
+
     public function create(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
+        $this->validateUsers($request, false);
 
-        $user = User::create([
-            'name'      => $validatedData['name'],
-            'email'     => $validatedData['email'],
-            'password'  => Hash::make($validatedData['password'],)
-        ]);
+        $user = User::create($request->all());
 
         //$user->sendEmailVerificationNotification();
 
         session()->flash('crudwire', 'new user created succesfully');
-        return view('crudwire::crudwire');
+        return redirect()->route('crudwire');
     }
 
     public function show($id)
     {
         $user = User::find($id);
-        return view('crudwire::create', ['user' => $user]);
+        return view('crudwire::create', ['user' => $user, 'fillables' => $this->fillables ]);
     }
 
     public function update(Request $request, $id)
     {
+        $input = $this->validateUsers($request, true);
+
         $user = User::find($id);
-        $validatedData = array();
+        $result = $user->fill($input);
 
-        if( $user->password === $request->password)
-        {
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255|unique:users',
-            ]);
-
-            $user->fill($validatedData);
-        }
-        else
-        {
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255|unique:users',
-                'password' => 'required|string|min:8|confirmed',
-            ]);
-
-
-                $user->name         = $validatedData['name'];
-                $user->email        = $validatedData['email'];
-                $user->password     = Hash::make($validatedData['password']);
-                $user->save;
-        }
-
+        $user->save();
         session()->flash('crudwire', 'user info edited succesfully');
-        return route('crudwire::crudwire');
-
-
+        return redirect()->route('crudwire');
     }
 
 }

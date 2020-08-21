@@ -8,8 +8,6 @@
                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2" role="group" aria-label="First group">
                         <button class="btn btn-danger"  wire:click="destroy">Yes, delete</button>
-                    </div>
-                    <div class="btn-group" role="group" aria-label="Second group">
                         <button class="btn btn-success"  wire:click="cancel">No</button>
                     </div>
                 </div>

@@ -21,9 +21,7 @@ if($auth){
                 return view('crudwire::crudwire');
             })->name('crudwire');
 
-            Route::get('user', function () {
-                return view('crudwire::create');
-            })->name('newuser');
+            Route::get('user', [CrudwireUserController::class, 'index'] )->name('newuser');
 
             Route::post('user', [CrudwireUserController::class, 'create'])->name('createuser');
             Route::get('user/{id}', [CrudwireUserController::class, 'show'])->name('edituser');

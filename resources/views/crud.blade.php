@@ -10,26 +10,28 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th colspan="1">
+                                <th colspan="2">
                                     <input class="form-control mr-sm-2" type="search" placeholder="Search by email or username" aria-label="Search" wire:model="search">
                                 </th>
-                                <th colspan="1">
+                                <th colspan="2">
                                     <label for="orderby">sort by:</label>
                                     <select name="orderby" wire:model="sortby">
-                                        <option value="id" > id </option>
-                                        <option value="name"> name </option>
-                                        <option value="email"> email </option>
-                                        <option value="email_verified_at"> email verified at </option>
+                                        @foreach ($columns as $columnName)
+                                           <option value="{{$columnName}}">{{str_replace('_',' ',$columnName )}}</option>
+                                        @endforeach
                                     </select>
                                 </th>
-                                <th colspan="1">
+                                <th colspan="2">
                                     <label for="ascdesc">sort by:</label>
                                     <select name="ascdesc" wire:model="ascdesc">
                                         <option value="asc" >asc</option>
                                         <option value="desc">descending</option>
                                     </select>
                                 </th>
-                                <th colspan="1">
+                                <th colspan="{{ $columnCount = count($columns)+2-6}} "></th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
                                     <a href="{{route('newuser')}}" class="btn btn-primary">create new user</a>
                                 </th>
                                 <th colspan="2">
@@ -43,17 +45,15 @@
                                         <option value="200">200</option>
                                     </select>
                                 </th>
+                                <th colspan="{{ $columnCount}} "></th>
                             </tr>
                         </thead>
                         <thead>
                             <tr>
                                 @foreach ($columns as $columnName )
                                     <th>
-                                        @if(strpos($columnName, '_'))
-                                            {{str_replace('_',' ',$columnName )}}
-                                        @else
-                                            {{$columnName }}
-                                        @endif </th>
+                                    {{str_replace('_',' ',$columnName )}}
+                                    </th>
                                 @endforeach
                                 <th colspan="2">actions</th>
                             </tr>
