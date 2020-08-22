@@ -81,7 +81,9 @@ php artisan vendor:publish
 ### routes
 Standard crudwire is configured to be served on the route yourwebsite.example/crudwire. This prefix can be changed by publishing the config.
 
-Now you can add an ENV variables to .env. CRUDWIRE_PREFIX which can be set to whatever you like. e.g: CRUDWIRE_PREFIX=example => yourwebsite.example/crudwire is where you will find the user overview.
+Now you can add an `ENV` variables to .env `CRUDWIRE_PREFIX` which can be set to whatever you like. 
+
+e.g: `CRUDWIRE_PREFIX=example` => yourwebsite.example/crudwire is where you will find the user overview.
 
 The routes used by Crudwire are the following:
 | route              | name             | method    |
