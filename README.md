@@ -9,7 +9,7 @@ Cooked with Livewire and a Dash of turbolinks.
 [packagist link](https://packagist.org/packages/janmoo/crudwire "packagist - JanMoo/Crudwire")
 
 ![alt text](https://github.com/JanMoo/crudwireimages/blob/master/crudwirescreenshot1.png "screenshot user overview")
-![alt text](https://github.com/JanMoo/crudwireimages/blob/master/crudwirescreenshot2.png "create new user")
+![alt text](https://github.com/JanMoo/crudwireimages/blob/master/creenshot2.png "create new user")
 
 # requirements
 this package requires you to install:
