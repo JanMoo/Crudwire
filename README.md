@@ -9,19 +9,22 @@ Cooked with Livewire and a Dash of turbolinks.
 [packagist link](https://packagist.org/packages/janmoo/crudwire "packagist - JanMoo/Crudwire")
 
 # requirements
-this package requires you to install turbolinks.js 
-and laravel authentication 
+this package requires you to install:
+* turbolinks.js 
+* laravel authentication 
 
 this package uses bootstrap
 
-full guide turbolinks.js:
-https://medium.com/web-developer/turbolinks-with-laravel-speed-up-navigation-in-your-laravel-app-with-turobolinks-41efbade643b
+[guide turbolinks.js](https://medium.com/web-developer/turbolinks-with-laravel-speed-up-navigation-in-your-laravel-app-with-turobolinks-41efbade643b "medium turbolinks.js install guide")
 
-documantation laravel authentication:
-https://laravel.com/docs/7.x/authentication
+[npm turbolink](https://www.npmjs.com/package/turbolinks "npm turbolinks.js")
+
+[documentation laravel authentication](https://laravel.com/docs/7.x/authentication "laravel authentication")
 
 # quickstart
+
 note this a quickstart guide for more info visit links above
+
 ## install turbolinks
 
 install turbolinks on your laravel app
