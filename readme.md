@@ -4,22 +4,29 @@
 [![License](https://poser.pugx.org/janmoo/crudwire/license)](//packagist.org/packages/janmoo/crudwire)
 
 This package provides a CRUD(create read update delete) interface, extending the laravel/ui auth package.
-Cooked with Livewire and a Dash of turbolinks. 
+Cooked up with Livewire and a Dash of turbolinks. 
 
-[packagist link](https://packagist.org/packages/janmoo/crudwire "packagist - JanMoo/Crudwire")
+##### [packagist link](https://packagist.org/packages/janmoo/crudwire "packagist - JanMoo/Crudwire")
+##### [official website](https://crudwire.be "Crudwire official website")
+
+#### some screenshots:
+![alt text](https://github.com/JanMoo/crudwireimages/blob/master/crudwirescreenshot1.png "screenshot user overview")
+![alt text](https://github.com/JanMoo/crudwireimages/blob/master/screenshot2.png "create new user")
 
 # requirements
 this package requires you to install:
 * turbolinks.js 
 * laravel authentication 
 
-this package uses bootstrap
+this package uses [bootstrap](https://getbootstrap.com/ "bootsrap official site")
 
 [guide turbolinks.js](https://medium.com/web-developer/turbolinks-with-laravel-speed-up-navigation-in-your-laravel-app-with-turobolinks-41efbade643b "medium turbolinks.js install guide")
 
 [npm turbolink](https://www.npmjs.com/package/turbolinks "npm turbolinks.js")
 
 [documentation laravel authentication](https://laravel.com/docs/7.x/authentication "laravel authentication")
+
+[official livewire site](https://laravel-livewire.com/)
 
 # quickstart
 
@@ -81,7 +88,9 @@ php artisan vendor:publish
 ### routes
 Standard crudwire is configured to be served on the route yourwebsite.example/crudwire. This prefix can be changed by publishing the config.
 
-Now you can add an ENV variables to .env. CRUDWIRE_PREFIX which can be set to whatever you like. e.g: CRUDWIRE_PREFIX=example => yourwebsite.example/crudwire is where you will find the user overview.
+Now you can add an `ENV` variables to .env `CRUDWIRE_PREFIX` which can be set to whatever you like. 
+
+e.g: `CRUDWIRE_PREFIX=example` => yourwebsite.example/crudwire is where you will find the user overview.
 
 The routes used by Crudwire are the following:
 | route              | name             | method    |
