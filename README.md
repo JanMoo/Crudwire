@@ -84,6 +84,15 @@ Standard crudwire is configured to be served on the route yourwebsite.example/cr
 Now you can add an ENV variables to .env. CRUDWIRE_PREFIX which can be set to whatever you like. e.g: CRUDWIRE_PREFIX=example => yourwebsite.example/crudwire is where you will find the user overview.
 
 The routes used by Crudwire are the following:
+| route         | name          | method|
+| ------------- |:-------------:| -----:|
+| /prefix       | right-aligned | $1600 |
+| /prefix/user  | centered      |   $12 |
+| /prefix/user  | are neat      |    $1 |
+| /prefix/user/{id}       | right-aligned | $1600 |
+| /prefix/user  | centered      |   $12 |
+| /prefix/user  | are neat      |    $1 |
+
 * /prefix             name('crudwire')      GET 
 * /prefix/user        name('newuser')       GET
 * /prefix/user        name('createuser')    POST
