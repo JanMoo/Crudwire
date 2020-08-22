@@ -11,11 +11,18 @@ class Crud extends Component
     use WithPagination;
 
     public $results_per_page, $search, $sortby, $ascdesc, $columns, $columnNames;
+
+    /**
+     * mount
+     *
+     * @param  mixed $user
+     * @return void
+     */
     public function mount(User $user)
     {
         $this->sortby           = "id";
         $this->ascdesc          = "asc";
-        $this->createnewuser    = false;
+
 
         $columns = Schema::getColumnListing($user->getTable());
 
@@ -30,11 +37,21 @@ class Crud extends Component
     }
 
 
+    /**
+     * updatingSearch
+     *
+     * @return void
+     */
     public function updatingSearch()
     {
         $this->resetPage();
     }
 
+    /**
+     * render
+     *
+     * @return void
+     */
     public function render()
     {
 

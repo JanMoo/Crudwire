@@ -11,7 +11,7 @@
                         <thead>
                             <tr>
                                 <th colspan="2">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Search by email or username" aria-label="Search" wire:model="search">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search by email or username" aria-label="Search" wire:model.debounce.250ms="search">
                                 </th>
                                 <th colspan="2">
                                     <label for="orderby">sort by:</label>
