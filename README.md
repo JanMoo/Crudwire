@@ -18,13 +18,15 @@ this package requires you to install:
 * turbolinks.js 
 * laravel authentication 
 
-this package uses bootstrap
+this package uses [bootstrap](https://getbootstrap.com/ "bootsrap official site")
 
 [guide turbolinks.js](https://medium.com/web-developer/turbolinks-with-laravel-speed-up-navigation-in-your-laravel-app-with-turobolinks-41efbade643b "medium turbolinks.js install guide")
 
 [npm turbolink](https://www.npmjs.com/package/turbolinks "npm turbolinks.js")
 
 [documentation laravel authentication](https://laravel.com/docs/7.x/authentication "laravel authentication")
+
+[official livewire site](https://laravel-livewire.com/)
 
 # quickstart
 
