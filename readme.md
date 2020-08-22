@@ -112,4 +112,9 @@ There's 2 more variables which can be added to .ENV, CRUDWIRE_AUTH which can be 
 The last env variable that can be set in the .ENV, is CRUDWIRE_LAYOUT this defines the layout which crudwire uses to extend and display views. By default this is set to crudwire::layouts.base. Important don't forget to add the livewire directives (@livewireStyles and @livewireScripts), Add turbolinks.js and make sure your layout has a @section('content')
 
 
+## extending and customizing this package
 
+It's important to note that at the moment virtual columns are not yet supported.
+
+In the view: `create.blade.php` there's a SWITCH which can be customized to add support for extra input elements.
+The validation of the form input to create or update a user can be found in the `CrudwireUserController.php` the methods: `validateUserscreate()` and `validateUsersUpdate` here you can add your own validation rules if necessary. 
