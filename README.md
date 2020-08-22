@@ -6,8 +6,8 @@
 This package provides a CRUD(create read update delete) interface, extending the laravel/ui auth package.
 Cooked with Livewire and a Dash of turbolinks. 
 
-[packagist link](https://packagist.org/packages/janmoo/crudwire "packagist - JanMoo/Crudwire")
-[official website](https://crudwire.be "Crudwire official website")
+##### [packagist link](https://packagist.org/packages/janmoo/crudwire "packagist - JanMoo/Crudwire")
+##### [official website](https://crudwire.be "Crudwire official website")
 
 #### some screenshots:
 ![alt text](https://github.com/JanMoo/crudwireimages/blob/master/crudwirescreenshot1.png "screenshot user overview")
