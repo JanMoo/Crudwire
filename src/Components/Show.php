@@ -2,30 +2,63 @@
 namespace Janmoo\Crudwire\Components;
 
 use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+
 
 class show extends Component
 {
-    public $hidden, $userid, $user;
+    public $hidden, $userid, $user, $confirmation, $columns;
 
-    public function mount(User $user)
+    /**
+     * mount
+     *
+     * @param  mixed $user
+     * @param  mixed $columns
+     * @return void
+     */
+    public function mount(User $user, $columns)
     {
         $this->user               = $user;
+        $this->columns            = $columns;
     }
 
+    /**
+     * cancel
+     *
+     * @return void
+     */
     public function cancel()
     {
-        $this->edit= false;
-        $this->mount($this->user);
+        $this->confirmation = null;
     }
 
-    public function destroy(){
+    /**
+     * kill
+     *
+     * @return void
+     */
+    public function kill()
+    {
+        $this->confirmation = $this->user->id;
+    }
+
+    /**
+     * destroy
+     *
+     * @return void
+     */
+    public function destroy()
+    {
         User::destroy($this->user->id);
 
         $this->hidden = true;
     }
 
+    /**
+     * render
+     *
+     * @return void
+     */
     public function render()
     {
         return view('crudwire::show');

@@ -1,10 +1,19 @@
 <tr @if($hidden) hidden @endif>
-
-        <td><p>{{ $user->id }}</p></td>
-        <td><p>{{ $user->name }}</p></td>
-        <td><p>{{ $user->email }}</p></td>
-        <td><p>{{ $user->email_verified_at }}</p></td>
-        <td><a class="btn btn-success" href="{{route('edituser', ['id' => $user->id])}} ">edit</a></td>
-        <td><button class="btn btn-danger"  wire:click="destroy">delete</button></td>
-
+        @foreach ($columns as $columnName)
+        <td><p>{{ $user->$columnName }}</p></td>
+        @endforeach
+        @if($confirmation === $user->id )
+            <td colspan="2">
+                <p>are you sure?</p>
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <button class="btn btn-danger"  wire:click="destroy">Yes, delete</button>
+                        <button class="btn btn-success"  wire:click="cancel">No</button>
+                    </div>
+                </div>
+            </td>
+        @else
+            <td><a class="btn btn-success" href="{{route('edituser', ['id' => $user->id])}} ">edit</a></td>
+            <td><button class="btn btn-danger"  wire:click="kill">delete</button></td>
+        @endif
 </tr>
