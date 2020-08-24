@@ -75,7 +75,7 @@ class CrudwireServiceProvider extends ServiceProvider
 
         // Publishing the views.
         $this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/crudwire'),
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor/janmoo'),
         ], 'crudwire.views');
 
         // Publishing assets.
