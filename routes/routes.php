@@ -13,12 +13,9 @@ if($auth){
     $middleware = 'web';
 }
 
-
-
-
 Route::name('crudwire.')->prefix($prefix)->middleware($middleware)->group(function () {
 
-    Route::resource('user', CrudwireUserController::class )->except('destroy');
+    Route::resource('user', CrudwireUserController::class )->except(['destroy', 'show']);
 
 });
 

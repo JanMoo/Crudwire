@@ -5,16 +5,18 @@ namespace Janmoo\Crudwire;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Janmoo\Crudwire\Traits\FormInputsTrait;
 
 
 class CrudwireUserController extends Controller
 {
+    use FormInputsTrait;
     /**
      * fillables
      *
      * @var mixed
      */
-    public $fillables, $routeToOverview;
+    public $fillables, $routeToOverview, $inputList;
 
     /**
      * __construct
@@ -24,8 +26,10 @@ class CrudwireUserController extends Controller
     public function __construct()
     {
         $user = User::first();
-        $this->fillables = $user->getFillable();
-        $this->routeToOverview = 'crudwire.user.index';
+
+        $this->fillables        = $user->getFillable();
+        $this->routeToOverview  = 'crudwire.user.index';
+        $this->inputList        = $this->getInputList();
 
     }
 
@@ -100,7 +104,10 @@ class CrudwireUserController extends Controller
     public function create()
     {
         $route='crudwire.user.store';
-        return view('crudwire::create', ['fillables' => $this->fillables, 'route' => $route ]);
+        return view('crudwire::create', [
+                            'fillables' => $this->fillables,
+                            'route' => $route,
+                            'inputList'  => $this->inputList ]);
     }
 
 
@@ -132,7 +139,12 @@ class CrudwireUserController extends Controller
         $parameters = ['user' => $id];
         $route = 'crudwire.user.update';
         $user = User::find($id);
-        return view('crudwire::create', ['user' => $user, 'fillables' => $this->fillables, 'route' => $route, 'parameters' => $parameters ]);
+        return view('crudwire::create',
+                        ['user' => $user,
+                        'fillables' => $this->fillables,
+                        'route' => $route,
+                        'parameters' => $parameters,
+                        'inputList'  => $this->inputList ]);
     }
 
 
