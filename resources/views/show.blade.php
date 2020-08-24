@@ -13,7 +13,7 @@
                 </div>
             </td>
         @else
-            <td><a class="btn btn-success" href="{{route('edituser', ['id' => $user->id])}} ">edit</a></td>
+            <td><a class="btn btn-success" href="{{route('crudwire.user.edit', ['user' => $user->id])}} ">edit</a></td>
             <td><button class="btn btn-danger"  wire:click="kill">delete</button></td>
         @endif
 </tr>

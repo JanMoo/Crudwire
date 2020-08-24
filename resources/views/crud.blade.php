@@ -32,7 +32,7 @@
                             </tr>
                             <tr>
                                 <th colspan="2">
-                                    <a href="{{route('newuser')}}" class="btn btn-primary">create new user</a>
+                                    <a href="{{route('crudwire.user.create')}}" class="btn btn-primary">create new user</a>
                                 </th>
                                 <th colspan="2">
                                     <label for="results-per-page">results per page:</label>

@@ -14,7 +14,7 @@ class CrudwireUserController extends Controller
      *
      * @var mixed
      */
-    public $fillables;
+    public $fillables, $routeToOverview;
 
     /**
      * __construct
@@ -25,6 +25,8 @@ class CrudwireUserController extends Controller
     {
         $user = User::first();
         $this->fillables = $user->getFillable();
+        $this->routeToOverview = 'crudwire.user.index';
+
     }
 
     /**
@@ -81,48 +83,62 @@ class CrudwireUserController extends Controller
 
     /**
      * index
-     * returns form to create new user
+     *
      * @return void
      */
     public function index()
     {
-        $route='createuser';
-        return view('crudwire::create', ['fillables' => $this->fillables, 'route' => $route ]);
+        return view('crudwire::crudwire');
     }
+
 
     /**
      * create
-     * creates a new users
+     *
+     * @return void
+     */
+    public function create()
+    {
+        $route='crudwire.user.store';
+        return view('crudwire::create', ['fillables' => $this->fillables, 'route' => $route ]);
+    }
+
+
+    /**
+     * store
+     *
      * @param  mixed $request
      * @return void
      */
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validateCreateUsers($request);
 
         $user = User::create($request->all());
 
         session()->flash('crudwire', 'new user created succesfully');
-        return redirect()->route('crudwire');
+        return redirect()->route($this->routeToOverview);
     }
 
+
     /**
-     * show
-     * shows form to edit user info
+     * edit
+     *
      * @param  mixed $id
      * @return void
      */
-    public function show($id)
+    public function edit($id)
     {
-        $parameters = ['id' => $id];
-        $route = 'updateuser';
+        $parameters = ['user' => $id];
+        $route = 'crudwire.user.update';
         $user = User::find($id);
         return view('crudwire::create', ['user' => $user, 'fillables' => $this->fillables, 'route' => $route, 'parameters' => $parameters ]);
     }
 
+
     /**
      * update
-     * updates users info
+     *
      * @param  mixed $request
      * @param  mixed $id
      * @return void
@@ -136,7 +152,7 @@ class CrudwireUserController extends Controller
 
         $user->save();
         session()->flash('crudwire', 'user info edited succesfully');
-        return redirect()->route('crudwire');
+        return redirect()->route($this->routeToOverview);
     }
 
 }

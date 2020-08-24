@@ -10,32 +10,13 @@
                 <div class="card-body">
                     <form method="POST" action="{{ (isset($parameters) ) ? route($route, $parameters) : route($route) }}">
                         @csrf
-                        @foreach ($fillables as $fillable )
-                            @switch($fillable)
-
-                                @case('password')
-                                    @include('crudwire::form.inputs.password')
-                                    @break
-
-                                @case('name')
-                                    @include('crudwire::form.inputs.name')
-                                    @break
-
-                                @case('email')
-                                    @include('crudwire::form.inputs.email')
-                                    @break
-
-                                @default
-                                    @include('crudwire::form.inputs.text')
-                            @endswitch
-                        @endforeach
-
+                        @include('crudwire::form.switch')
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     save changes
                                 </button>
-                                <a href="{{ route('crudwire')}}"class="btn btn-danger">
+                                <a href="{{ route('crudwire.user.index')}}"class="btn btn-danger">
                                     cancel
                                 </a>
                             </div>
