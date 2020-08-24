@@ -10,7 +10,9 @@
                 <div class="card-body">
                     <form method="POST" action="{{ (isset($parameters) ) ? route($route, $parameters) : route($route) }}">
                         @csrf
-                        @method('PUT')
+                        @if(isset($user))
+                            @method('PUT')
+                        @endif
                         @include('crudwire::form.switch')
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
