@@ -8,7 +8,10 @@ return [
     /**
     *add tot this array blade components
     *with $key being there column name
-    *to display in create and edit view
+    *and value the blade component name
+    *once added
+    *input elements will be
+    *displayed in create and edit view
     */
     'crudwire_form_inputs'                  => ['default'    => 'crudwire::form.inputs.text'],
 
@@ -16,6 +19,8 @@ return [
      * validation rules used
      * when new user is
      * created
+     * you can customize these rules
+     *
      */
     'validation_rules_create_new_user'      => ['name' => 'required|string|max:255',
                                                 'email' => 'required|string|email|max:255|unique:users',
@@ -23,6 +28,7 @@ return [
     /**
      * validation rules used
      * when user is updated
+     * you can customize these rules
      *
      */
 
