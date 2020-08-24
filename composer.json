@@ -12,6 +12,7 @@
     "homepage": "https://github.com/janmoo/crudwire",
     "keywords": ["Laravel", "Crudwire"],
     "require": {
+        "php" : "^7.3",
         "illuminate/support": "~5|~6|~7",
         "livewire/livewire": "^1.3",
         "laravel/ui": "^2.1"
@@ -24,8 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Janmoo\\Crudwire\\": "src/",
-            "Janmoo\\Crudwire\\Components\\": "src/components/"
+            "Janmoo\\Crudwire\\": "src/"
         }
     },
     "autoload-dev": {
