@@ -1,5 +1,3 @@
 # The license
 
-Copyright (c) author name <author email>
-
-...Add your license text here...
+You are free to use this package. 
