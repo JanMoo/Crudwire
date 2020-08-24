@@ -11,13 +11,11 @@ trait ValidateUsersTrait
 {
     public function validateCreateUsers(Request $request)
     {
-        $validatedData=[];
+        $validatedData      =[];
+        $validationRules    = config('crudwire.validation_rules_create_new_user');
 
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
+
+        $validatedData = $this->validate($request, $validationRules);
 
 
         return $validatedData;
@@ -25,24 +23,19 @@ trait ValidateUsersTrait
 
     public function validateUpdateUsers(Request $request)
     {
-        $validatedData=[];
+        $validatedData      =[];
+        $validationRules    =config('crudwire.validation_rules_update_user');
+
 
         if ($request->password)
         {
-
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255',
-                'password' => 'required|string|min:8|confirmed',
-            ]);
+            $validatedData = $this->validate($request, $validationRules);
         }
         else
         {
+            unset($validationRules['password']);
 
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255',
-            ]);
+            $validatedData = $this->validate($request, $validationRules);
         }
 
         return $validatedData;
