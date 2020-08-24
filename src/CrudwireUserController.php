@@ -6,11 +6,12 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Janmoo\Crudwire\Traits\FormInputsTrait;
+use Janmoo\Crudwire\Traits\ValidateUsersTrait;
 
 
 class CrudwireUserController extends Controller
 {
-    use FormInputsTrait;
+    use FormInputsTrait, ValidateUsersTrait;
     /**
      * fillables
      *
@@ -31,58 +32,6 @@ class CrudwireUserController extends Controller
         $this->routeToOverview  = 'crudwire.user.index';
         $this->inputList        = $this->getInputList();
 
-    }
-
-    /**
-     * validateUsers
-     *
-     * @param  mixed $request
-     * @param  mixed $update
-     * @return void
-     */
-    public function validateCreateUsers(Request $request)
-    {
-        $validatedData=[];
-
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-
-
-        return $validatedData;
-    }
-
-    /**
-     * validateUpdateusers
-     *
-     * @param  mixed $request
-     * @return void
-     */
-    public function validateUpdateUsers(Request $request)
-    {
-        $validatedData=[];
-
-        if ($request->password)
-        {
-
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255',
-                'password' => 'required|string|min:8|confirmed',
-            ]);
-        }
-        else
-        {
-
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255',
-            ]);
-        }
-
-        return $validatedData;
     }
 
     /**
