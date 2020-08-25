@@ -1,6 +1,6 @@
 <tr @if($hidden) hidden @endif>
         @foreach ($columns as $columnName)
-        <td><p>{{ $user->$columnName }}</p></td>
+            <td><p>{{ $user->$columnName }}</p></td>
         @endforeach
         @if($confirmation === $user->id )
             <td colspan="2">
