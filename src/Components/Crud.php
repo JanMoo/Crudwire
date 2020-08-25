@@ -1,16 +1,18 @@
 <?php
-namespace Janmoo\Crudwire\src\Components;
+namespace Janmoo\Crudwire\Components;
 
 use Illuminate\Foundation\Auth\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Schema;
+use Janmoo\Crudwire\Traits\GetFillableColumnsTrait;
+
 
 class Crud extends Component
 {
-    use WithPagination;
+    use WithPagination, GetFillableColumnsTrait;
 
-    public $results_per_page, $search, $sortby, $ascdesc, $columns, $columnNames;
+    public $search, $sortBy, $ascDesc, $columns, $columnNames, $pagination;
 
     /**
      * mount
@@ -20,8 +22,9 @@ class Crud extends Component
      */
     public function mount(User $user)
     {
-        $this->sortby           = "id";
-        $this->ascdesc          = "asc";
+        $this->sortBy           = "id";
+        $this->ascDesc          = "asc";
+        $this->pagination       = config("crudwire.crudwire_pagination");
 
 
         $columns = Schema::getColumnListing($user->getTable());
@@ -48,18 +51,47 @@ class Crud extends Component
     }
 
     /**
+     * updatedSortBy
+     *
+     * @return void
+     */
+    public function updatedSortBy()
+    {
+        $this->resetPage();
+    }
+
+    /**
+     * updatedgAscDesc
+     *
+     * @return void
+     */
+    public function updatedgAscDesc()
+    {
+        $this->resetPage();
+    }
+
+    /**
      * render
      *
      * @return void
      */
     public function render()
     {
+        $user;
+
+        if ($this->search) {
+            $user = User::Where('name', 'like', '%'.$this->search.'%' )
+                    ->orWhere('email', 'like', '%'.$this->search.'%' )
+                    ->orderBy($this->sortBy, $this->ascDesc)
+                    ->paginate($this->pagination);
+        } else {
+            $user = User::orderBy($this->sortBy, $this->ascDesc)
+                    ->paginate($this->pagination);
+        }
+
 
         return view('crudwire::crud',[
-            'users' => User::Where('name', 'like', '%'.$this->search.'%' )
-                        ->orWhere('email', 'like', '%'.$this->search.'%' )
-                        ->orderBy($this->sortby, $this->ascdesc)
-                        ->paginate($this->results_per_page),
+            'users' => $user,
         ]);
     }
 }

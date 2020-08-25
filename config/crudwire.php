@@ -4,6 +4,7 @@ return [
     'crudwire_prefix'                       => env('CRUDWIRE_PREFIX', 'crudwire'),
     'crudwire_middleware'                   => env('CRUDWIRE_AUTH', 'web'),
     'crudwire_layout'                       => env('CRUDWIRE_LAYOUT', 'crudwire::layouts.base'),
+    'crudwire_pagination'                   => env('CRUDWIRE_PAGINATION', 5),
 
     /**
     *add tot this array blade components

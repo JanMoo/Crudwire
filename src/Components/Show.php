@@ -1,5 +1,5 @@
 <?php
-namespace Janmoo\Crudwire\src\Components;
+namespace Janmoo\Crudwire\Components;
 
 use Illuminate\Foundation\Auth\User;
 use Livewire\Component;
