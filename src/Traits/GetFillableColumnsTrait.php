@@ -19,5 +19,6 @@ trait GetFillableColumnsTrait
                 unset($columns[$key]);
             }
         }
+    return $columns;
    }
 }
