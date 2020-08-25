@@ -14,9 +14,7 @@ trait ValidateUsersTrait
         $validatedData      =[];
         $validationRules    = config('crudwire.validation_rules_create_new_user');
 
-
         $validatedData = $this->validate($request, $validationRules);
-
 
         return $validatedData;
     }
