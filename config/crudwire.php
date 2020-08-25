@@ -5,6 +5,7 @@ return [
     'crudwire_middleware'                   => env('CRUDWIRE_AUTH', 'web'),
     'crudwire_layout'                       => env('CRUDWIRE_LAYOUT', 'crudwire::layouts.base'),
     'crudwire_pagination'                   => env('CRUDWIRE_PAGINATION', 10),
+    'crudwire_dont_display'                 => env('CRUDWIRE_DONT_DISPLAY',['password','remember_token']),
 
     /**
     *add tot this array blade components

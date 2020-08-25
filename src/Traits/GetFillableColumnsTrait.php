@@ -11,11 +11,11 @@ trait GetFillableColumnsTrait
 {
    public function getFillableColumns($user)
    {
-    $columns = Schema::getColumnListing($user->getTable());
+    $columns                = Schema::getColumnListing($user->getTable());
+    $columnsNotToDisplay    = config('crudwire.crudwire_dont_display');
 
         foreach ($columns as $key => $value) {
-            if (($value === "password") ||($value === "remember_token")) {
-
+            if (in_array($value, $columnsNotToDisplay)) {
                 unset($columns[$key]);
             }
         }
