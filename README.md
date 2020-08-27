@@ -81,9 +81,6 @@ npm install && npm run dev
 All set and ready to go.
 ========================
 
-You should have succesfully installed crudwire.
-===============================================
-
 Documentation
 =============
 
