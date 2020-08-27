@@ -27,7 +27,7 @@ Quickstart
 Let's get this party started!
 =============================
 
-This is a quickstart guide, please check documentation for more in depth information.
+This is a quickstart guide, please check [documentation](#documentation) for more in depth information.
 
 Install Laravel authentication
 ------------------------------
