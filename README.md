@@ -182,41 +182,13 @@ e.g: `CRUDWIRE_PREFIX=happy` => yourwebsite.example/happy is where you will find
 
 The routes used by Crudwire are the following:
 
-route
-
-name
-
-method
-
-/`CRUDWIRE_PREFIX`/user
-
-`'crudwire.user.index'`
-
-**GET**
-
-/`CRUDWIRE_PREFIX`/user/create
-
-`'crudwire.user.create'`
-
-**GET**
-
-/`CRUDWIRE_PREFIX`/user
-
-`'crudwire.user.store'`
-
-**POST**
-
-/`CRUDWIRE_PREFIX`/user/{user}/edit
-
-`'crudwire.user.edit'`
-
-**GET**
-
-/`CRUDWIRE_PREFIX`/user/{user}
-
-`'crudwire.user.update'`
-
-**PUT|PATCH**
+|route|name|method|
+|--- |--- |--- |
+|/CRUDWIRE_PREFIX/user|'crudwire.user.index'|GET|
+|/CRUDWIRE_PREFIX/user/create|'crudwire.user.create'|GET|
+|/CRUDWIRE_PREFIX/user|'crudwire.user.store'|POST|
+|/CRUDWIRE_PREFIX/user/{user}/edit|'crudwire.user.edit'|GET|
+|/CRUDWIRE_PREFIX/user/{user}|'crudwire.user.update'|PUT PATCH|
 
 All of these routes use the `CruwireUsersController.php`.
 
