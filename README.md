@@ -13,76 +13,67 @@ Cooked up with Livewire and a Dash of turbolinks.
 ![alt text](https://github.com/JanMoo/crudwireimages/blob/master/crudwirescreenshot1.png "screenshot user overview")
 ![alt text](https://github.com/JanMoo/crudwireimages/blob/master/screenshot2.png "create new user")
 
-# requirements
-this package requires you to install:
-* turbolinks.js 
-* laravel authentication 
+Quickstart
+==========
 
-this package uses [bootstrap](https://getbootstrap.com/ "bootsrap official site")
+Let's get this party started!
+=============================
 
-[guide turbolinks.js](https://medium.com/web-developer/turbolinks-with-laravel-speed-up-navigation-in-your-laravel-app-with-turobolinks-41efbade643b "medium turbolinks.js install guide")
+This is a quickstart guide, please check documentation for more in depth information.
 
-[npm turbolink](https://www.npmjs.com/package/turbolinks "npm turbolinks.js")
+Install Laravel authentication
+------------------------------
 
-[documentation laravel authentication](https://laravel.com/docs/7.x/authentication "laravel authentication")
+    composer require laravel/ui
+        
 
-[official livewire site](https://laravel-livewire.com/)
+    php artisan ui vue --auth
+        
 
-# quickstart
+Migrate database.
 
-note this a quickstart guide for more info visit links above
+Install Turbolinks
+------------------
 
-## install laravel authentication 
-```
-composer require laravel/ui
-```
+Install Turbolinks on your Laravel app.
 
-run in laravel application
+    npm install turbolinks
+        
 
-```
-php artisan ui vue --auth
-```
+Add Turbolinks to your `app.js` below bootstrap.js.
 
-migrate database 
+    require('./bootstrap');
+        var Turbolinks = require("turbolinks")
+        Turbolinks.start()
+        
 
-## install turbolinks
+Add `data-turbolinks-track` attribute to your `script/css` tags. Make sure to check this happens on every page `layouts.app`.
 
-install turbolinks on your laravel app
-```
-npm install turbolinks
-```
+    
+        <head>
+          <script defer src="{{ mix('js/app.js') }}" data-turbolinks-track="true" ></script>
+    
+          <link href="{{mix('css/app.css')}}" rel="stylesheet" data-turbolinks-track="true">
+        </head>
+        
 
-add Turbolinks to your app.js below bootstrap.js
-```javascript
-require('./bootstrap');
-var Turbolinks = require("turbolinks")
-Turbolinks.start()
-```
+Please check that your `app.js` is loaded on every page.
 
-add data-turbolinks-track attribute to your script/css tags
-make sure that this happens on every page (layouts.app)
-```html
-<head>
-  <script defer src="{{ mix('js/app.js') }}" data-turbolinks-track="true" ></script>
-  
-  <link href="{{mix('css/app.css')}}" rel="stylesheet" data-turbolinks-track="true">
-</head>
-```
-make sure that your app.js is loaded on every page
+Install Crudwire
+----------------
 
-# install crudwire
-```
-composer require janmoo/crudwire
-```
+    composer require janmoo/crudwire
+        
 
-npm install & npm run dev 
+npm install && npm run dev
 
-```
-npm i
-npm run dev
-```
-now you can run php artisan serve, and visit localhost/crudwire
+    npm install && npm run dev
+        
 
-# Diggin Deeper
-checkout documentation on official site
-[official website](https://crudwire.be "Crudwire official website")
+All set and ready to go.
+========================
+
+You should have succesfully installed crudwire.
+===============================================
+
+### Check out the documentation for more in depth info.
