@@ -71,7 +71,7 @@ class CrudwireServiceProvider extends ServiceProvider
         // Publishing the configuration file.
         $this->publishes([
             __DIR__.'/../config/crudwire.php' => config_path('crudwire.php'),
-        ], 'config');
+        ], 'crudwire.config');
 
         // Publishing the views.
         $this->publishes([
