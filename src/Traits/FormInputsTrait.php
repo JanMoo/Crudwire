@@ -15,7 +15,8 @@ trait FormInputsTrait
            'email'      => 'crudwire::form.inputs.email',
           ];
 
-        $inputList[] = config('crudwire_form_inputs');
+        array_push($inputList, config('crudwire_form_inputs'));
+
 
         return $inputList;
    }

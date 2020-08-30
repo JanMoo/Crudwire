@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-turbolinks="false">
     <div class="row justify-content-center">
         <div class="col-md-auto">
             <div class="card">
