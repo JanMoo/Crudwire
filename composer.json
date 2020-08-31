@@ -9,7 +9,7 @@
             "homepage": "https://jan.moorkens.mtantwerp.eu"
         }
     ],
-    "homepage": "https://github.com/janmoo/crudwire",
+    "homepage": "https://crudwire.be",
     "keywords": ["Laravel", "Crudwire"],
     "require": {
         "php" : "^7.3",
