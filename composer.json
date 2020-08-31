@@ -1,6 +1,6 @@
 {
     "name": "janmoo/crudwire",
-    "description": "a crud package for laravel made with livewire",
+    "description": "a package for Laravel Auth, performing crud operations on users",
     "license": "MIT",
     "authors": [
         {
